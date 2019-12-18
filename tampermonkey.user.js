@@ -7,6 +7,7 @@
 // @require http://code.jquery.com/jquery-2.1.0.min.js
 // @updateURL https://github.com/minhtancnttptit/qldt_prepare_schedule/raw/master/tampermonkey.user.js
 // @license MIT
+// edit for HANU by minhtanit
 // ==/UserScript==
 
 function createArray(length) {

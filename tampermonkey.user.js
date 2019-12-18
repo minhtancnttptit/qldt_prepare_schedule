@@ -5,7 +5,7 @@
 // @include     *
 // @run-at      document-start
 // @require http://code.jquery.com/jquery-2.1.0.min.js
-// @updateURL https://github.com/28dec/qldt_prepare_schedule/raw/master/tampermonkey.user.js
+// @updateURL https://github.com/minhtancnttptit/qldt_prepare_schedule/raw/master/tampermonkey.user.js
 // @license MIT
 // ==/UserScript==
 

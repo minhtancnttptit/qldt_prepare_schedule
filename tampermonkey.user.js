@@ -144,15 +144,15 @@ document.addEventListener ("DOMContentLoaded", function(){
 					if(i < 9){
 						tmp_151.push(parseInt($(this).find("label").attr("id")[i]))
 					} else if(i < 19) {
-						tmp_151.push(parseInt("1" + $(this).find("label").attr("id")[i]) - 15)
+						tmp_151.push(parseInt("1" + $(this).find("label").attr("id")[i]) - 10
 					} else if(i < 29){
-						tmp_151.push(parseInt("2" + $(this).find("label").attr("id")[i]) - 15)
+						tmp_151.push(parseInt("2" + $(this).find("label").attr("id")[i]) - 10)
 					} else if(i < 39){
-						tmp_151.push(parseInt("3" + $(this).find("label").attr("id")[i]) - 15)
+						tmp_151.push(parseInt("3" + $(this).find("label").attr("id")[i]) - 10)
 					} else if(i < 48){
-						tmp_151.push(parseInt("4" + $(this).find("label").attr("id")[i]) - 15)
+						tmp_151.push(parseInt("4" + $(this).find("label").attr("id")[i]) - 10)
 					} else {
-						tmp_151.push(parseInt("5" + $(this).find("label").attr("id")[i]) - 15)
+						tmp_151.push(parseInt("5" + $(this).find("label").attr("id")[i]) - 10)
 					}
 				}
 			}

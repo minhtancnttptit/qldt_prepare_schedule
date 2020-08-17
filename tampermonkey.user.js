@@ -94,6 +94,7 @@ document.addEventListener ("DOMContentLoaded", function(){
 		// end of highlight course full
 	})
 	$(document).on("click", "#divTDK table", function(){
+    console.log('click');
 		var course = $(this).find('td')
 		var weeks = []
 		var day_of_week = []
@@ -160,6 +161,7 @@ document.addEventListener ("DOMContentLoaded", function(){
 			weeks.push(tmp_151)
 		})
 		course.eq(11).find('div.top-fline').map(function(){
+      console.log('test');
 			// day_of_week.push($(this).text())
 			var data = $(this).text().toUpperCase();
 			switch(data){
@@ -212,6 +214,7 @@ document.addEventListener ("DOMContentLoaded", function(){
 		if(weeks.length != day_of_week.length){
 			alert("Hệ thống đang bị lỗi môn này!");
 		} else {
+      console.log('test');
 			var tmp1 = [];
 			var tmp2 = [];
 			for(i = 0; i < weeks.length; i++){
@@ -239,26 +242,32 @@ document.addEventListener ("DOMContentLoaded", function(){
 			m2.set(subject_code, tmp2);
 			if(m1.get(subject_code) != undefined){
 				var tmp_219 = m1.get(subject_code);
+        console.log(tmp_219);
+        tmp_219 = [...new Set(tmp_219)];
 				for(i = 0; i < tmp_219.length; i++){
-					if($("#tkb_preview_table1").find('td.bvk_table_cell').eq(tmp_219[i]).text() == "-"){ // da co mon tu truoc
+          console.log($("#tkb_preview_table1").find("td.bvk_table_cell").eq(tmp_219[i]).text());
+					if($("#tkb_preview_table1").find('td.bvk_table_cell').eq(tmp_219[i]).text() === "-"){ // da co mon tu truoc
 						$("#tkb_preview_table1").find('td.bvk_table_cell').eq(tmp_219[i]).css("background-color", "#FF0000"); //red
 						$("#tkb_preview_table1").find('td.bvk_table_cell').eq(tmp_219[i]).html("+");
 					} else {
 						$("#tkb_preview_table1").find('td.bvk_table_cell').eq(tmp_219[i]).css("background-color", "#00FF00"); // green
-						// $("#tkb_preview_table1").find('td.bvk_table_cell').eq(tmp_219[i]).prop('value', subject_code); // green
+						$("#tkb_preview_table1").find('td.bvk_table_cell').eq(tmp_219[i]).prop('value', subject_code); // green
 						$("#tkb_preview_table1").find('td.bvk_table_cell').eq(tmp_219[i]).html("-");
 					}
 					table_data[1][tmp_219[i]].set(subject_code, subject_name + " - " + subject_group + " - " + subject_tth + " - " + subject_teacher)
 					course_list.set(subject_code, subject_name + " - " + subject_group + " - " + subject_tth + " - " + subject_teacher)
 				}
 				tmp_219 = m2.get(subject_code);
+        console.log(tmp_219);
+        tmp_219 = [...new Set(tmp_219)];
 				for(i = 0; i < tmp_219.length; i++){
-					if($("#tkb_preview_table2").find('td.bvk_table_cell').eq(tmp_219[i]).text() == "-"){ // da co mon tu truoc
+          console.log($("#tkb_preview_table2").find('td.bvk_table_cell').eq(tmp_219[i]).text());
+					if($("#tkb_preview_table2").find('td.bvk_table_cell').eq(tmp_219[i]).text() === "-"){ // da co mon tu truoc
 						$("#tkb_preview_table2").find('td.bvk_table_cell').eq(tmp_219[i]).css("background-color", "#FF0000"); //red
 						$("#tkb_preview_table2").find('td.bvk_table_cell').eq(tmp_219[i]).html("+");
 					} else {
 						$("#tkb_preview_table2").find('td.bvk_table_cell').eq(tmp_219[i]).css("background-color", "#00FF00"); //green
-						// $("#tkb_preview_table2").find('td.bvk_table_cell').eq(tmp_219[i]).prop('value', subject_code); //green
+						$("#tkb_preview_table2").find('td.bvk_table_cell').eq(tmp_219[i]).prop('value', subject_code); //green
 						$("#tkb_preview_table2").find('td.bvk_table_cell').eq(tmp_219[i]).html("-");
 					}
 					table_data[2][tmp_219[i]].set(subject_code, subject_name + " - " + subject_group + " - " + subject_tth + " - " + subject_teacher)
